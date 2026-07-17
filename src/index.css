@@ -864,6 +864,16 @@ body {
     font-size: 40px;
   }
 
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(250, 250, 251, 0.96) 0%,
+      rgba(250, 250, 251, 0.93) 55%,
+      rgba(250, 250, 251, 0.75) 80%,
+      rgba(250, 250, 251, 0.45) 100%
+    );
+  }
+
   .countdown-card {
     flex-direction: column;
     align-items: flex-start;
