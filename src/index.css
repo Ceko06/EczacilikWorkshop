@@ -472,14 +472,14 @@ body {
 /* ---------- About ---------- */
 .about-section {
   background: #fff;
-  padding: 50px 0 0;
+  padding: 70px 0 40px;
 }
 
 .about-inner {
   max-width: 1240px;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  align-items: center;
+  align-items: flex-start;
   gap: 30px;
 }
 
@@ -492,7 +492,7 @@ body {
 }
 
 .about-text {
-  padding: 40px 0;
+  padding: 20px 0 110px;
 }
 
 .about-title {
