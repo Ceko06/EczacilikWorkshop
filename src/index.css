@@ -317,6 +317,7 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 36px 40px 30px;
+  box-shadow: var(--shadow);
 }
 
 .survey-title {
