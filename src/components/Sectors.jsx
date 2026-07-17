@@ -82,4 +82,35 @@ export default function Sectors() {
               style={{ transform: `translateX(calc(${-active} * (((100% - 44px) / 3) + 22px)))` }}
             >
               {SECTORS.map((s) => (
-                <div className="se
+                <div className="sector-card" key={s.label}>
+                  <img className="sector-img" src={s.image} alt={s.label} />
+                  <div className="sector-label">
+                    <span className="sector-icon">{s.icon}</span>
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <button
+            className="carousel-arrow right"
+            aria-label="Sonraki"
+            onClick={() => setActive((a) => Math.min(MAX, a + 1))}
+          >
+            →
+          </button>
+        </div>
+        <div className="carousel-dots">
+          {Array.from({ length: MAX + 1 }).map((_, i) => (
+            <button
+              key={i}
+              className={`dot-btn${i === active ? ' active' : ''}`}
+              onClick={() => setActive(i)}
+              aria-label={`Slayt ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

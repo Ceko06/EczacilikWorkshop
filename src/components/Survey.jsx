@@ -116,4 +116,14 @@ export default function Survey() {
           </button>
 
           <p className="survey-privacy">
-            <svg viewBox="0 0 24 24" 
+            <svg viewBox="0 0 24 24" width="13" height="13" className="lock-icon">
+              <rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" strokeWidth="2" />
+              <path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" strokeWidth="2" />
+            </svg>
+            Verileriniz gizli tutulur ve yalnızca bu atölye kapsamında kullanılacaktır.
+          </p>
+        </form>
+      </div>
+    </section>
+  )
+}
