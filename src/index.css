@@ -875,6 +875,14 @@ body {
     height: 1px;
   }
 
+  .countdown-item:last-child {
+    display: none;
+  }
+
+  .countdown-item:nth-child(3) .cd-sep {
+    display: none;
+  }
+
   .survey-grid {
     grid-template-columns: 1fr;
   }
