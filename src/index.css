@@ -735,7 +735,7 @@ body {
 
 /* ---------- Contact bar ---------- */
 .contact-bar {
-  background: var(--bg);
+  background: #fff;
   padding: 30px 0;
 }
 
@@ -751,6 +751,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  box-shadow: 0 14px 28px -12px rgba(22, 24, 29, 0.18);
 }
 
 .contact-item {
