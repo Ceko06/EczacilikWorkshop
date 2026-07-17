@@ -11,9 +11,6 @@ export default function About() {
             vermek için tasarlanmış özel bir deneyimdir.
           </p>
         </div>
-        <div className="about-image">
-          <img src="/ai-illustration.png" alt="Yapay Zeka İllüstrasyonu" />
-        </div>
       </div>
     </section>
   )

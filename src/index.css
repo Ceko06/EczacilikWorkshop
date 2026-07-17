@@ -477,10 +477,8 @@ body {
 
 .about-inner {
   max-width: 1240px;
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  align-items: flex-start;
-  gap: 30px;
+  background: url('/ai-illustration.png') right center / contain no-repeat;
+  min-height: 300px;
 }
 
 .section-eyebrow {
@@ -492,6 +490,7 @@ body {
 }
 
 .about-text {
+  max-width: 55%;
   padding: 20px 0 110px;
 }
 
@@ -507,18 +506,6 @@ body {
   font-size: 13.5px;
   line-height: 1.7;
   color: #4b5263;
-}
-
-.about-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
 }
 
 /* ---------- Features ---------- */
@@ -892,11 +879,12 @@ body {
   }
 
   .about-inner {
-    grid-template-columns: 1fr;
+    background: none;
   }
 
   .about-text {
-    padding: 36px 28px;
+    max-width: 100%;
+    padding: 36px 0 40px;
   }
 
   .features-grid {
