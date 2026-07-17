@@ -9,7 +9,7 @@
   --card: #ffffff;
   --border: #e5e7eb;
   --radius: 14px;
-  --shadow: 0 10px 30px rgba(22, 24, 29, 0.08);
+  --shadow: 0 6px 16px rgba(22, 24, 29, 0.06);
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
@@ -566,7 +566,7 @@ body {
   color: var(--red);
   font-size: 15px;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(22, 24, 29, 0.14);
+  box-shadow: var(--shadow);
   z-index: 4;
   display: flex;
   align-items: center;
@@ -751,7 +751,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  box-shadow: 0 14px 28px -12px rgba(22, 24, 29, 0.18);
+  box-shadow: var(--shadow);
 }
 
 .contact-item {
