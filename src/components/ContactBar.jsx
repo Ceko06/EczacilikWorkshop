@@ -46,7 +46,7 @@ export default function ContactBar() {
           </span>
           <div>
             <p className="contact-main">Kolaysoft Teknoloji</p>
-            <p className="contact-sub">Bilkent Cyberpark, Ankara</p>
+            <p className="contact-sub">YDA Center, Ankara</p>
           </div>
         </div>
         </div>
