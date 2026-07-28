@@ -226,11 +226,17 @@ export default function Survey() {
       return
     }
     setShowErrors(false)
+    const scrollToTop = () => {
+      const el = document.getElementById('anket')
+      const top = el ? el.getBoundingClientRect().top + window.scrollY - 20 : 0
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
     if (step < TOTAL) {
       setStep(step + 1)
-      window.scrollTo({ top: document.getElementById('anket')?.offsetTop - 20 || 0, behavior: 'smooth' })
+      scrollToTop()
     } else {
       setDone(true)
+      requestAnimationFrame(scrollToTop)
     }
   }
 
