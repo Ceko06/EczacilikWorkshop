@@ -586,7 +586,7 @@ export default function Survey() {
                 </div>
               </div>
 
-              <div className="q-conditional">
+              <div className="q-block">
                 <span className="q-number">14</span>
                 <p className="q-title">
                   Eczaneler arası dijital bir takas platformunu aktif olarak kullanmanız için sizin
@@ -608,7 +608,6 @@ export default function Survey() {
                     )
                   })}
                 </div>
-                <p className="q-footnote"><InfoDot /> En fazla 2 seçenek belirleyebilirsiniz.</p>
               </div>
             </div>
           )}
@@ -645,8 +644,8 @@ export default function Survey() {
               <div className="q-block">
                 <QNumber n={17} />
                 <p className="q-title">
-                  Eczacılar Odası'ndan ve üst kurumlardan en öncelikli beklentileriniz nelerdir? (Açık
-                  Uçlu) (Örn: Dijital onay, uzaktan kontrol mekanizmaları için teknolojik altyapı
+                  Eczacılar Odası'ndan ve üst kurumlardan en öncelikli beklentileriniz nelerdir?
+                  (Örn: Dijital onay, uzaktan kontrol mekanizmaları için teknolojik altyapı
                   çözümlerinin üretilmesi, hukuki destek vb.)
                 </p>
                 <div className="loc-field loc-full">
