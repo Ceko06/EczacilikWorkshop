@@ -590,7 +590,7 @@ export default function Survey() {
                 <span className="q-number">14</span>
                 <p className="q-title">
                   Eczaneler arası dijital bir takas platformunu aktif olarak kullanmanız için sizin
-                  için en kritik şart nedir? (En fazla 2 seçim)
+                  için en kritik şart nedir? 
                 </p>
                 <p className="q-hint">En fazla 2 seçenek seçin.</p>
                 <div className="opt-group">
