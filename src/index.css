@@ -1021,6 +1021,12 @@ body {
   transform: translateY(-50%) scale(1.08);
 }
 
+.carousel-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
 .carousel-arrow.left {
   left: -16px;
 }
@@ -1076,7 +1082,7 @@ body {
 
 .sector-track {
   display: flex;
-  gap: 22px;
+  gap: var(--gap, 22px);
   transition: transform 0.45s ease;
 }
 
@@ -1085,7 +1091,7 @@ body {
   border-radius: var(--radius);
   overflow: hidden;
   height: 210px;
-  flex: 0 0 calc((100% - 44px) / 3);
+  flex: 0 0 calc((100% - (var(--visible, 3) - 1) * var(--gap, 22px)) / var(--visible, 3));
 }
 
 .sector-img {
@@ -1376,10 +1382,6 @@ body {
 
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .sector-card {
-    flex: 0 0 100%;
   }
 
   .news-card {

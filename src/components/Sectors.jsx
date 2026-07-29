@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const SECTORS = [
   {
@@ -56,11 +56,46 @@ const SECTORS = [
   },
 ]
 
-const VISIBLE = 3
-const MAX = SECTORS.length - VISIBLE
+function getVisible(w) {
+  if (w <= 640) return 1
+  if (w <= 900) return 2
+  return 3
+}
 
 export default function Sectors() {
   const [active, setActive] = useState(0)
+  const [visible, setVisible] = useState(3)
+  const [offset, setOffset] = useState(0)
+  const trackRef = useRef(null)
+
+  const gap = visible === 1 ? 16 : 22
+  const max = Math.max(0, SECTORS.length - visible)
+
+  // Update visible count on resize
+  useEffect(() => {
+    const onResize = () => setVisible(getVisible(window.innerWidth))
+    onResize()
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  // Keep active index within bounds when layout changes
+  useEffect(() => {
+    setActive((a) => Math.min(a, Math.max(0, SECTORS.length - visible)))
+  }, [visible])
+
+  // Measure real card width and compute pixel offset
+  useEffect(() => {
+    const compute = () => {
+      const track = trackRef.current
+      if (!track || !track.children[0]) return
+      const cardW = track.children[0].getBoundingClientRect().width
+      setOffset(active * (cardW + gap))
+    }
+    compute()
+    window.addEventListener('resize', compute)
+    return () => window.removeEventListener('resize', compute)
+  }, [active, visible, gap])
 
   return (
     <section className="sectors-section">
@@ -72,6 +107,7 @@ export default function Sectors() {
           <button
             className="carousel-arrow left"
             aria-label="Önceki"
+            disabled={active === 0}
             onClick={() => setActive((a) => Math.max(0, a - 1))}
           >
             ←
@@ -79,7 +115,8 @@ export default function Sectors() {
           <div className="sector-viewport">
             <div
               className="sector-track"
-              style={{ transform: `translateX(calc(${-active} * (((100% - 44px) / 3) + 22px)))` }}
+              ref={trackRef}
+              style={{ '--visible': visible, '--gap': `${gap}px`, transform: `translateX(${-offset}px)` }}
             >
               {SECTORS.map((s) => (
                 <div className="sector-card" key={s.label}>
@@ -95,13 +132,14 @@ export default function Sectors() {
           <button
             className="carousel-arrow right"
             aria-label="Sonraki"
-            onClick={() => setActive((a) => Math.min(MAX, a + 1))}
+            disabled={active === max}
+            onClick={() => setActive((a) => Math.min(max, a + 1))}
           >
             →
           </button>
         </div>
         <div className="carousel-dots">
-          {Array.from({ length: MAX + 1 }).map((_, i) => (
+          {Array.from({ length: max + 1 }).map((_, i) => (
             <button
               key={i}
               className={`dot-btn${i === active ? ' active' : ''}`}
