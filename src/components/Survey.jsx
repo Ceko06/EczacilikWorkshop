@@ -216,7 +216,7 @@ export default function Survey() {
   }
 
   // Required-field checks per step
-  const step1Valid = form.ad.trim() && form.deneyim && form.il && form.ilce.trim() && form.mahalle.trim()
+  const step1Valid = form.deneyim && form.il && form.ilce.trim() && form.mahalle.trim()
   const step2Valid = form.karlilik
   const stepValid = step === 1 ? step1Valid : step === 2 ? step2Valid : true
 
@@ -309,15 +309,14 @@ export default function Survey() {
             <div className="q-list">
               <div className="q-block">
                 <QNumber n={1} />
-                <p className="q-title">Adınız - Soyadınız: <span className="req">*</span></p>
+                <p className="q-title">Adınız - Soyadınız:</p>
                 <input
-                  className={`q-input${err(!form.ad.trim()) ? ' invalid' : ''}`}
+                  className="q-input"
                   type="text"
                   placeholder="Adınızı ve soyadınızı yazınız"
                   value={form.ad}
                   onChange={(e) => set('ad', e.target.value)}
                 />
-                {err(!form.ad.trim()) && <span className="q-error">Bu alan zorunludur.</span>}
               </div>
 
               <div className="q-block">
