@@ -7,3 +7,4 @@ vite.config.js.timestamp-*
 # Referans / kullanılmayan dosyalar
 *.zip
 public/duyurular/Ekran görüntüsü*
+public/Province Statistics/

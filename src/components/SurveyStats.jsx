@@ -1,16 +1,16 @@
 const CITY_STATS = [
-  { city: 'Diyarbakır', pct: 14.2 },
-  { city: 'Van', pct: 12.6 },
-  { city: 'Erzurum', pct: 10.2 },
-  { city: 'Gaziantep', pct: 9.7 },
-  { city: 'Elazığ', pct: 8.5 },
-  { city: 'Malatya', pct: 7.3 },
-  { city: 'Ağrı', pct: 6.1 },
-  { city: 'Mardin', pct: 7.1 },
-  { city: 'Batman', pct: 4.2 },
-  { city: 'Siirt', pct: 3.4 },
-  { city: 'Şırnak', pct: 2.9 },
-  { city: 'Erzincan', pct: 4.8 },
+  { city: 'Diyarbakır', pct: 14.2, icon: 'diyarbakır.png' },
+  { city: 'Van', pct: 12.6, icon: 'van.png' },
+  { city: 'Erzurum', pct: 10.2, icon: 'erzurum.png' },
+  { city: 'Gaziantep', pct: 9.7, icon: 'gaziantep.png' },
+  { city: 'Elazığ', pct: 8.5, icon: 'elazığ.png' },
+  { city: 'Malatya', pct: 7.3, icon: 'Malatya.png' },
+  { city: 'Ağrı', pct: 6.1, icon: 'ağrı.png' },
+  { city: 'Mardin', pct: 7.1, icon: 'mardin.png' },
+  { city: 'Batman', pct: 4.2, icon: 'batman.png' },
+  { city: 'Siirt', pct: 3.4, icon: 'siirt.png' },
+  { city: 'Şırnak', pct: 2.9, icon: 'şırnak.png' },
+  { city: 'Erzincan', pct: 4.8, icon: 'erzincan.png' },
 ]
 
 const TOTAL = '1.248'
@@ -39,6 +39,7 @@ function Donut() {
 
 export default function SurveyStats() {
   const legend = DONUT_DATA
+  const maxPct = Math.max(...CITY_STATS.map((c) => c.pct))
 
   return (
     <section className="stats-section">
@@ -82,12 +83,16 @@ export default function SurveyStats() {
 
             <div className="stats-grid">
               {CITY_STATS.map((c) => (
-                <img
-                  key={c.city}
-                  className="stat-img"
-                  src={`/Province%20Statistics/${encodeURIComponent(c.city)}.png`}
-                  alt={`${c.city} ${fmt(c.pct)}`}
-                />
+                <div className="stat-item" key={c.city}>
+                  <div className="stat-top">
+                    <img className="stat-icon" src={`/il-ikonlar/${encodeURIComponent(c.icon)}`} alt="" aria-hidden="true" />
+                    <span className="stat-city">{c.city}</span>
+                    <span className="stat-pct">{fmt(c.pct)}</span>
+                  </div>
+                  <div className="stat-bar">
+                    <span style={{ width: `${(c.pct / maxPct) * 100}%` }} />
+                  </div>
+                </div>
               ))}
             </div>
           </div>
