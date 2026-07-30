@@ -676,7 +676,7 @@ export default function Survey() {
                 </p>
                 <div className="loc-field loc-full">
                   <label>Yanıtınız</label>
-                  <textarea className="q-textarea" rows={4} placeholder="Yanıtınızı yazınız" value={form.anaProblem} onChange={(e) => set('anaProblem', e.target.value)} />
+                  <textarea className="q-textarea" rows={4} placeholder='(Örn: "Eczaneler arası yasal takas ve İTS süreçlerinin zaman alması / Kalfa/teknisyen işlemlerinin uzaktan kontrol ve onay mekanizmasının olmaması...")' value={form.anaProblem} onChange={(e) => set('anaProblem', e.target.value)} />
                 </div>
               </div>
             </div>
