@@ -355,19 +355,21 @@ body {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 40px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .stats-left {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 18px;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .donut-wrap {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 20px;
 }
 
