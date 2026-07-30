@@ -1,6 +1,7 @@
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Countdown from './components/Countdown.jsx'
+import SurveyStats from './components/SurveyStats.jsx'
 import Survey from './components/Survey.jsx'
 import About from './components/About.jsx'
 import Features from './components/Features.jsx'
@@ -15,6 +16,7 @@ export default function App() {
       <Header />
       <Hero />
       <Countdown />
+      <SurveyStats />
       <Survey />
       <About />
       <Features />
