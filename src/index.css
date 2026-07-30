@@ -315,11 +315,9 @@ body {
 .stats-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 30px 34px 34px;
-  max-width: 1000px;
-  margin: 0 auto;
+  padding: 30px 36px 34px;
 }
 
 .stats-head {
@@ -355,8 +353,8 @@ body {
 .stats-body {
   margin-top: 26px;
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 34px;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
   align-items: start;
 }
 
@@ -370,45 +368,48 @@ body {
 .donut-wrap {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .stats-donut {
   flex-shrink: 0;
+  width: 172px;
+  height: 172px;
 }
 
 .donut-cap {
-  fill: var(--muted);
-  font-size: 8px;
-  font-weight: 600;
+  fill: #8b91a0;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .donut-total {
   fill: var(--dark);
-  font-size: 21px;
+  font-size: 34px;
   font-weight: 800;
+  letter-spacing: 0.5px;
 }
 
 .donut-legend {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 16px;
 }
 
 .donut-legend li {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
+  gap: 10px;
+  font-size: 14px;
   font-weight: 600;
-  color: var(--text);
+  color: var(--dark);
   white-space: nowrap;
 }
 
 .legend-dot {
-  width: 9px;
-  height: 9px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -433,50 +434,11 @@ body {
   gap: 14px;
 }
 
-.stat-item {
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  padding: 15px 16px 16px;
-}
-
-.stat-top {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
-
-.stat-icon {
-  color: var(--red);
-  display: inline-flex;
-  flex-shrink: 0;
-}
-
-.stat-city {
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--dark);
-}
-
-.stat-pct {
-  margin-left: auto;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--muted);
-}
-
-.stat-bar {
-  margin-top: 12px;
-  height: 5px;
-  border-radius: 999px;
-  background: #eceef1;
-  overflow: hidden;
-}
-
-.stat-bar span {
+.stat-img {
+  width: 100%;
+  height: auto;
   display: block;
-  height: 100%;
-  border-radius: 999px;
-  background: var(--red);
+  border-radius: 13px;
 }
 
 @media (max-width: 900px) {
