@@ -25,43 +25,15 @@ const DONUT_DATA = [
 ]
 
 function Donut() {
-  const R = 80
-  const STROKE = 24
-  const GAP = 34 // arc-length reserved between segments (creates the rounded-cap gap)
-  const C = 2 * Math.PI * R
-  const sum = DONUT_DATA.reduce((s, d) => s + d.pct, 0)
-
-  let acc = 0
-  const segs = DONUT_DATA.map((d) => {
-    const arc = (d.pct / sum) * C
-    const dash = Math.max(arc - GAP, 0)
-    const seg = { dash, offset: acc + GAP / 2, color: d.color, city: d.city }
-    acc += arc
-    return seg
-  })
-
   return (
-    <svg className="stats-donut" viewBox="0 0 200 200">
-      <g transform="rotate(-90 100 100)">
-        {segs.map((s) => (
-          <circle
-            key={s.city}
-            cx="100"
-            cy="100"
-            r={R}
-            fill="none"
-            stroke={s.color}
-            strokeWidth={STROKE}
-            strokeLinecap="round"
-            strokeDasharray={`${s.dash} ${C - s.dash}`}
-            strokeDashoffset={-s.offset}
-          />
-        ))}
-      </g>
-      <text className="donut-cap" x="100" y="88" textAnchor="middle">Toplam Katılım</text>
-      <text className="donut-total" x="100" y="122" textAnchor="middle">{TOTAL}</text>
-      <text className="donut-cap" x="100" y="147" textAnchor="middle">Eczane</text>
-    </svg>
+    <div className="donut-figure">
+      <img className="donut-svg" src="/segmented%20donut.svg" alt="" aria-hidden="true" />
+      <div className="donut-center">
+        <span className="donut-cap">Toplam Katılım</span>
+        <span className="donut-total">{TOTAL}</span>
+        <span className="donut-cap">Eczane</span>
+      </div>
+    </div>
   )
 }
 
