@@ -5,5 +5,5 @@ dist
 vite.config.js.timestamp-*
 
 # Referans / kullanılmayan dosyalar
-duyurular.zip
+*.zip
 public/duyurular/Ekran görüntüsü*
